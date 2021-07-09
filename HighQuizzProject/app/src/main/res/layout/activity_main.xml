@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
+    android:background="@color/green_200"
     tools:context=".MainActivity">
 
-
-    <TextView
+    <!--<TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -29,20 +28,35 @@
         android:text="Preguntas"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:backgroundTint="#E47B0B" />
+        app:backgroundTint="@color/orange_700" />
 
     <Button
         android:id="@+id/btnExamen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnPreguntas"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="190dp"
         android:text="Examen Prueba"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:backgroundTint="#E47B0B" />
+        app:backgroundTint="@color/orange_700" />-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragmentContenedor"
+        android:layout_above="@id/btnNavigationPrincipal"
+        />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnNavigationPrincipal"
+        android:layout_alignParentBottom="true"
+        android:background="@color/green_900"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/menu_navigation_bottom"
+        />
 
 
 </RelativeLayout>

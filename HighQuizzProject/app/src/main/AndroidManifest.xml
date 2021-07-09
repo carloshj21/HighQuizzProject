@@ -12,7 +12,7 @@
         <activity android:name=".PlantillaTestActivity"/>
         <activity android:name=".PreguntasActivity" />
         <activity android:name=".MainActivity"/>
-        <activity android:name=".LoginAuth"/>
+        <!--activity android:name=".LoginAuth"/-->
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
