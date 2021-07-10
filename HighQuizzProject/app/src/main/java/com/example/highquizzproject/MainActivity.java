@@ -12,9 +12,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    /*private Button btnPreguntas;
-    private Button btnExamen;*/
-
     private BottomNavigationView btnNavigationPrincipal;
     private InicioFragment inicioFragment;
     private PerfilFragment perfilFragment;
@@ -32,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContenedor,inicioFragment).commit();   // EL primer fragment en mostrarse al iniciar la aplicación
 
         btnNavigationPrincipal.setOnNavigationItemSelectedListener(navListener);   // Asociación para que funcione el bottomNavigation
-        //btnPreguntas.setOnClickListener(clickProgramador);
     }
 
     BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -50,13 +46,5 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     };
-
-    /*View.OnClickListener clickProgramador = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent intentPreguntas = new Intent(MainActivity.this, PreguntasActivity.class);
-            startActivity(intentPreguntas);
-        }
-    };*/
 
 }
