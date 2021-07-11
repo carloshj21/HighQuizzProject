@@ -7,10 +7,35 @@
     android:background="@color/green_200"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/txtvNombreUsu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:gravity="center_horizontal"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtvCorreoUsu"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/txtvCorreoUsu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="84dp"
+        android:gravity="center_horizontal"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogout"
+        tools:layout_editor_absoluteX="0dp" />
+
     <Button
         android:id="@+id/btnLogout"
-        android:layout_width="256dp"
-        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="18dp"
+        android:layout_height="wrap_content"
         android:text="Cerrar sesión"
         android:textColor="@color/black"
         android:textSize="20dp"

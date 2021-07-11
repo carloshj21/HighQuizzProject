@@ -7,15 +7,41 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center">
+        android:padding="20dp">
 
-        <TextView
+        <EditText
+            android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="INICIO SESIÓN"
-            android:textAlignment="center"
-            android:textSize="18sp"
-            android:gravity="center_horizontal" />
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:hint="Correo electrónico" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:layout_marginTop="20dp"
+            android:hint="Contraseña"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Iniciar sesión"
+                android:backgroundTint="@color/orange_700"
+                android:textColor="@android:color/black"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 

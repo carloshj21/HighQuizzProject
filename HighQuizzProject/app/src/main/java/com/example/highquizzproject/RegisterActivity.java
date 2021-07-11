@@ -1,6 +1,7 @@
 package com.example.highquizzproject;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,6 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText editTextEmail;
     private EditText editTextPassword;
     private Button btnRegistro;
+    private Button btnSendToLogin;
 
     private String nombre = "";
     private String correo = "";
@@ -41,6 +43,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_registro);
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -49,6 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
         btnRegistro = (Button) findViewById(R.id.btnRegistro);
+        btnSendToLogin = (Button) findViewById(R.id.btnSendToLogin);
 
         btnRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
                 correo = editTextEmail.getText().toString();
                 password = editTextPassword.getText().toString();
 
+                // ---------------------------------------- Validación de formulario para registro ----------------------------------------
                 if(!nombre.isEmpty() && !correo.isEmpty() && !password.isEmpty()){
                     if(password.length() >= 6){
                         registrarUsuario();
@@ -70,8 +75,19 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+        // --------------------------------------------- Botón para ir a la vista de Log in --------------------------------------------
+        btnSendToLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+            }
+        });
     }
 
+
+    // ------------------------------------------------  Registrar usuario ----------------------------------------------------------
     private void registrarUsuario(){
         firebaseAuth.createUserWithEmailAndPassword(correo,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -104,5 +120,17 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+
+    // ------------------------------------------------  Verificar sesión activa ----------------------------------------------------------
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        if(firebaseAuth.getCurrentUser() != null){
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));   // Verifica si el usuario ya tiene una sesión activa
+            finish();
+        }
     }
 }
