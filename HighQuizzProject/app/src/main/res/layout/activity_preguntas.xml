@@ -14,17 +14,16 @@
         android:gravity="center"
         android:text="Seleccione las asignaturas a evaluar:"
         android:textColor="@color/black"
-        android:textSize="45dp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btnStartPreguntas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
@@ -34,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/español"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <CheckBox
@@ -42,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/matematicas"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <CheckBox
@@ -50,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/biologia"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <CheckBox
@@ -58,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Historia"
-            android:textSize="25dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <CheckBox
@@ -66,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Geografía"
-            android:textSize="25dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <CheckBox
@@ -74,7 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Física"
-            android:textSize="25dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <CheckBox
@@ -82,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Formación Cívica y Ética"
-            android:textSize="25dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <CheckBox
@@ -90,7 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Química"
-            android:textSize="25dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -98,14 +97,13 @@
         android:id="@+id/btnStartPreguntas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:text="Empezar"
         android:textColor="@color/black"
-        android:textSize="30dp"
+        android:textSize="20sp"
         app:backgroundTint="#E47B0B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
