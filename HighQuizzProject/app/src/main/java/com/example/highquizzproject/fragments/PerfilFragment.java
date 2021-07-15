@@ -36,6 +36,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PerfilFragment extends Fragment {
@@ -44,12 +45,13 @@ public class PerfilFragment extends Fragment {
     private TextView txtvNombreUsu;
     private TextView txtvCorreoUsu;
 
-    private String nombreUsu;
-    private String correoUsu;
-    private String idUsu;
-    private List<String> usuarios;
+    private String nombre;
+    private String correo;
 
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private ArrayList<String> usuarios;
+
+
+    FirebaseFirestore mFirestore = FirebaseFirestore.getInstance();
     FirebaseAuth mUser;
 
     @Nullable
@@ -65,7 +67,6 @@ public class PerfilFragment extends Fragment {
         btnLogout.setOnClickListener(onClickButton);
 
         mUser = FirebaseAuth.getInstance();
-        idUsu = mUser.getCurrentUser().getUid();
 
         obtenerInformacionUsuario();
 
@@ -82,43 +83,27 @@ public class PerfilFragment extends Fragment {
     };
 
     private void obtenerInformacionUsuario() {
-        txtvCorreoUsu.setText(mUser.getCurrentUser().getEmail());
 
-        /*CollectionReference usuarios = db.collection("Usuarios");
-        Query query = usuarios.whereEqualTo("correo",mUser.getCurrentUser().getEmail());*/
-
-
-        /*Task<QuerySnapshot> querySnapshot = query.get();
-
-        for(DocumentSnapshot document : querySnapshot.getResult().getDocuments()){
-            System.out.println(document.getId());
-        }*/
-
-
-        /*db.collection("Usuarios")
-                .get()
+        Task<QuerySnapshot> query = mFirestore.collection("Usuarios").whereEqualTo("correo",mUser.getCurrentUser().getEmail().toString()).get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d("PerfilFragment", document.getId() + " => " + document.getData());
+                                Log.d("PerfilFragment", document.getId() + " => " + document.getString("nombre"));
+                                //usuarios.add(document.getString("nombre"));
+                                nombre = document.getString("nombre");
+                                Log.d("Prueba Nombre",nombre);
+                                txtvNombreUsu.setText(nombre);
+                                txtvCorreoUsu.setText(mUser.getCurrentUser().getEmail());
+                                //usuarios.add(1,nombre);
+                                //Log.d("Prueba List",usuarios.get(0));
                             }
 
                         } else {
                             Log.w("PerfilFragment", "Error getting documents.", task.getException());
                         }
                     }
-                });*/
-
-        /*db.collection("Usuarios").document(idUsu).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                if (documentSnapshot.exists()) {
-                    nombreUsu = documentSnapshot.getString("nombre");
-                    txtvNombreUsu.setText(nombreUsu);
-                }
-            }
-        });*/
+                });
     }
 }
