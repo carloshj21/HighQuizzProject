@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
-    tools:context=".PreguntasActivity">
+    android:background="@drawable/fondo_activity_preguntas"
+    tools:context=".PreguntasActivity"
+
+    >
 
     <TextView
         android:id="@+id/textView"
@@ -13,17 +15,22 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Seleccione las asignaturas a evaluar:"
-        android:textColor="@color/black"
-        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:textSize="45dp"
+        android:fontFamily="cursive"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/btnStartPreguntas"
+
+        android:background="#51AA12"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
@@ -97,13 +104,14 @@
         android:id="@+id/btnStartPreguntas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:text="Empezar"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        app:backgroundTint="#E47B0B"
+        android:textSize="30dp"
+        app:backgroundTint="#C62828"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
 
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
