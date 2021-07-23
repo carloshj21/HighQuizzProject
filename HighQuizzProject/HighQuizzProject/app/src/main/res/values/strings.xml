@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HighQuizzProject</string>
+    <string name="español">Español</string>
+    <string name="matematicas">Matemáticas</string>
+    <string name="biologia">Biología</string>
+    <string name="nav_menu_perfil">Perfil</string>
+    <string name="nav_menu_inicio">Inicio</string>
+    <string name="nav_menu_sesion">Cerrar sesión</string>
+</resources>
