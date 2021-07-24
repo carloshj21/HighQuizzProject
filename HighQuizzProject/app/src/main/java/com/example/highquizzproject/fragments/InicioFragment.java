@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.highquizzproject.ExamenActivity;
 import com.example.highquizzproject.PreguntasActivity;
 import com.example.highquizzproject.R;
 
@@ -31,6 +32,7 @@ public class InicioFragment extends Fragment {
         textView2 = v.findViewById(R.id.textView2);
         btnPreguntas = v.findViewById(R.id.btnPreguntas);
         btnExamen = v.findViewById(R.id.btnExamen);
+        btnExamen.setOnClickListener(onClickListenerExamen);
         btnPreguntas.setOnClickListener(onClickButton);
 
         return v;
@@ -41,6 +43,14 @@ public class InicioFragment extends Fragment {
         public void onClick(View v) {
             Intent intentPreguntas = new Intent(getContext(),PreguntasActivity.class);
             startActivity(intentPreguntas);
+        }
+    };
+
+    View.OnClickListener onClickListenerExamen = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+           Intent intentExamen = new Intent(getContext(), ExamenActivity.class);
+           startActivity(intentExamen);
         }
     };
 }

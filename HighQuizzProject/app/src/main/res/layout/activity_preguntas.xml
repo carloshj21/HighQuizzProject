@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
-    tools:context=".PreguntasActivity">
+    android:background="@drawable/fondo_activity_preguntas"
+    tools:context=".PreguntasActivity"
+
+    >
 
     <TextView
         android:id="@+id/textView"
@@ -13,8 +15,9 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Seleccione las asignaturas a evaluar:"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="45dp"
+        android:fontFamily="cursive"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,6 +28,9 @@
         android:layout_height="0dp"
         android:layout_marginTop="30dp"
         android:orientation="vertical"
+
+        android:background="#51AA12"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
@@ -34,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/español"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <CheckBox
@@ -42,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/matematicas"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <CheckBox
@@ -50,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/biologia"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <CheckBox
@@ -58,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Historia"
-            android:textSize="25dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <CheckBox
@@ -66,7 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Geografía"
-            android:textSize="25dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <CheckBox
@@ -74,7 +80,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Física"
-            android:textSize="25dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <CheckBox
@@ -82,7 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Formación Cívica y Ética"
-            android:textSize="25dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <CheckBox
@@ -90,7 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Química"
-            android:textSize="25dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -101,11 +107,11 @@
         android:text="Empezar"
         android:textColor="@color/black"
         android:textSize="30dp"
-        app:backgroundTint="#E47B0B"
+        app:backgroundTint="#C62828"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
 
-
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
