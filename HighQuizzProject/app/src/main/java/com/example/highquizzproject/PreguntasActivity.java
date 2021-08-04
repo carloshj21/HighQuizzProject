@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 
+import java.util.ArrayList;
+
 public class PreguntasActivity extends AppCompatActivity {
 
     CheckBox chkEsp;
@@ -20,6 +22,7 @@ public class PreguntasActivity extends AppCompatActivity {
     CheckBox chkFCyE;
     CheckBox chkQuim;
     Button btnStartPreguntas;
+    ArrayList<String> materiasSelecc = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,34 +39,34 @@ public class PreguntasActivity extends AppCompatActivity {
         chkQuim = findViewById(R.id.chkQuim);
         btnStartPreguntas = findViewById(R.id.btnStartPreguntas);
         btnStartPreguntas.setOnClickListener(clickStartPreguntas);
-        SeleccionMaterias();
+
 
     }
 
     private void SeleccionMaterias() {
-        if (chkEsp.isEnabled()){
-
+        if (chkEsp.isChecked()==true){
+            materiasSelecc.add("Español");
         }
-        if (chkMat.isEnabled()){
-
+        if (chkMat.isChecked()==true){
+            materiasSelecc.add("Matemáticas");
         }
-        if (chkBio.isEnabled()){
-
+        if (chkBio.isChecked()==true){
+            materiasSelecc.add("Biología");
         }
-        if (chkHis.isEnabled()){
-
+        if (chkHis.isChecked()==true){
+            materiasSelecc.add("Historia");
         }
-        if (chkGeo.isEnabled()){
-
+        if (chkGeo.isChecked()==true){
+            materiasSelecc.add("Geografía");
         }
-        if (chkFis.isEnabled()){
-
+        if (chkFis.isChecked()==true){
+            materiasSelecc.add("Física");
         }
-        if (chkFCyE.isEnabled()){
-
+        if (chkFCyE.isChecked()==true){
+            materiasSelecc.add("Formación Cívica y Ética");
         }
-        if (chkQuim.isEnabled()){
-
+        if (chkQuim.isChecked()==true){
+            materiasSelecc.add("Química");
         }
     }
 
@@ -71,7 +74,10 @@ public class PreguntasActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent intentStartPreguntas = new Intent(PreguntasActivity.this,PlantillaTestActivity.class);
+            SeleccionMaterias();
+            intentStartPreguntas.putExtra("strArrayMat", materiasSelecc);
             startActivity(intentStartPreguntas);
+            finish();//Destruye esta activity para evitar un error o bug al llenar el Array y pasar a la siguiente Activity
 
         }
     };
