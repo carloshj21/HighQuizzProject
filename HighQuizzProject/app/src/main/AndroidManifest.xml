@@ -14,6 +14,7 @@
         <activity android:name=".PreguntasActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity" />
+        <activity android:name=".SugerirActivity"/>
         <activity android:name=".RegisterActivity" /> <!-- activity android:name=".LoginAuth"/ -->
         <activity android:name=".SplashActivity">
             <intent-filter>

@@ -17,12 +17,14 @@ import androidx.fragment.app.Fragment;
 import com.example.highquizzproject.ExamenActivity;
 import com.example.highquizzproject.PreguntasActivity;
 import com.example.highquizzproject.R;
+import com.example.highquizzproject.SugerirActivity;
 
 public class InicioFragment extends Fragment {
 
     private TextView textView2;
     private Button btnPreguntas;
     private Button btnExamen;
+    private Button btnSugerir;
 
     @Nullable
     @Override
@@ -32,8 +34,10 @@ public class InicioFragment extends Fragment {
         textView2 = v.findViewById(R.id.textView2);
         btnPreguntas = v.findViewById(R.id.btnPreguntas);
         btnExamen = v.findViewById(R.id.btnExamen);
+        btnSugerir = v.findViewById(R.id.btnSugerir);
         btnExamen.setOnClickListener(onClickListenerExamen);
         btnPreguntas.setOnClickListener(onClickButton);
+        btnSugerir.setOnClickListener(onClickSugerir);
 
         return v;
     }
@@ -51,6 +55,14 @@ public class InicioFragment extends Fragment {
         public void onClick(View v) {
            Intent intentExamen = new Intent(getContext(), ExamenActivity.class);
            startActivity(intentExamen);
+        }
+    };
+
+    View.OnClickListener onClickSugerir = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intentSugerir = new Intent(getContext(), SugerirActivity.class);
+            startActivity(intentSugerir);
         }
     };
 }
