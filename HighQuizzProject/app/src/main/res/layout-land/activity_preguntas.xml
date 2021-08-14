@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".PreguntasActivity"
+
+    >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:fontFamily="cursive"
+        android:gravity="center"
+        android:text="Seleccione las asignaturas a evaluar:"
+        android:textColor="@color/white"
+        android:textSize="45dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnStartPreguntas"
+        android:layout_width="234dp"
+        android:layout_height="60dp"
+        android:text="Empezar"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+
+        app:backgroundTint="#C62828"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintVertical_bias="0.453" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="376dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#51AA12"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="374dp"
+            android:layout_height="195dp"
+
+            android:background="#51AA12"
+
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/chkEsp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/español"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/chkMat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/matematicas"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/chkBio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/biologia"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/chkHis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Historia"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="355dp"
+            android:layout_height="194dp"
+            android:background="#51AA12"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/chkGeo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Geografía"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/chkFis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Física"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/chkFCyE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Formación Cívica y Ética"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/chkQuim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Química"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
