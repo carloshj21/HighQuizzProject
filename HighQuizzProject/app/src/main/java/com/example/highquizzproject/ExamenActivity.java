@@ -24,8 +24,6 @@ public class ExamenActivity extends AppCompatActivity {
             "3.Identifica cuál es el tiempo y el modo del verbo: Observaron;a)Presente de indicativo;b)Copretérito de indicativo;c)Pretérito de indicativo;d)Presente de subjuntivo;2",
             "4.Identifica el enunciado en con verbo en copretérito ;a)La formación que hemos recibido es bastante escasa;b)Este muchacho no se conformaba con poco;c) El libro pretende ayudar a las personas sensibles;d)El cocinero ha estado preparando el festín;1",
             "5.El propósito de la noticia es;a)Dar a conocer un acontecimiento actual importante;b)Comentar sobre un suceso diario;c)Dar a conocer la postura del periódico sobre un hecho;d)Mostar diferentes posturas de un acontecimiento actual;0",
-
-
     };
 
 
