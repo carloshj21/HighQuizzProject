@@ -27,7 +27,6 @@ public class PreguntasActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_preguntas);
         chkEsp = findViewById(R.id.chkEsp);
         chkMat = findViewById(R.id.chkMat);
