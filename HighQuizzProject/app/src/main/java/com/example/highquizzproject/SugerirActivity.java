@@ -92,6 +92,8 @@ public class SugerirActivity extends AppCompatActivity {
         });
 
 
+
+
     }
 
     private void InicializarSpinnerRespuestas() {
@@ -125,21 +127,63 @@ public class SugerirActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-            SubirFirestore();
+
+            if (ValidacionPreguntaNula()) {
+                SubirFirestore();
+
             /*
             String preguntaSugerida = String.valueOf(edtPreguntaSugerida.getText()) + ";a)" + String.valueOf(edtOpASugerida.getText()) + ";b)"
                     + String.valueOf(edtOpBSugerida.getText()) + ";c)" + String.valueOf(edtOpCSugerida.getText()) + ";d)" + String.valueOf(edtOpDSugerida.getText()) +
                     ";" + indiceRespuesta;
             String materiaSugerida = materiaSug;
             */
-            edtPreguntaSugerida.setText("");
-            edtOpASugerida.setText("");
-            edtOpBSugerida.setText("");
-            edtOpCSugerida.setText("");
-            edtOpDSugerida.setText("");
-            //Toast.makeText(getApplicationContext(), preguntaSugerida ,Toast.LENGTH_LONG).show();
+                edtPreguntaSugerida.setText("");
+                edtOpASugerida.setText("");
+                edtOpBSugerida.setText("");
+                edtOpCSugerida.setText("");
+                edtOpDSugerida.setText("");
+            }
+            else{
+                Toast.makeText(getApplicationContext(), "Te has dejado un campo vacío :(" ,Toast.LENGTH_LONG).show();
+            }
 
+        }
 
+        public boolean ValidacionPreguntaNula() {
+
+            boolean contenidoCampo = true;
+            String campoPregunta = String.valueOf(edtPreguntaSugerida.getText());
+            String campoedtA = String.valueOf(edtOpASugerida.getText());
+            String campoedtB = String.valueOf(edtOpBSugerida.getText());
+            String campoedtC = String.valueOf(edtOpCSugerida.getText());
+            String campoedtD = String.valueOf(edtOpDSugerida.getText());
+
+            if(campoPregunta.isEmpty()){
+                edtPreguntaSugerida.setError("Pregunta no detectada");
+                contenidoCampo = false;
+            }
+
+            if(campoedtA.isEmpty()){
+                edtOpASugerida.setError("Respuesta no detectada");
+                contenidoCampo = false;
+            }
+
+            if(campoedtB.isEmpty()){
+                edtOpBSugerida.setError("Respuesta no detectada");
+                contenidoCampo = false;
+            }
+
+            if(campoedtC.isEmpty()){
+                edtOpCSugerida.setError("Respuesta no detectada");
+                contenidoCampo = false;
+            }
+
+            if(campoedtD.isEmpty()){
+                edtOpDSugerida.setError("Respuesta no detectada");
+                contenidoCampo = false;
+            }
+
+            return contenidoCampo;
         }
 
 

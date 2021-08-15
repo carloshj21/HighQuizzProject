@@ -130,7 +130,6 @@ public class ExamenActivity extends AppCompatActivity {
             }
         }
 
-
     };
 
     View.OnClickListener onClickListenerAnterior = new View.OnClickListener() {
@@ -154,7 +153,4 @@ public class ExamenActivity extends AppCompatActivity {
             }
         }
     };
-
-
-
 }
