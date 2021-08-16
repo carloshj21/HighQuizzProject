@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -72,12 +73,16 @@ public class PreguntasActivity extends AppCompatActivity {
     View.OnClickListener clickStartPreguntas = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intentStartPreguntas = new Intent(PreguntasActivity.this,PlantillaTestActivity.class);
             SeleccionMaterias();
-            intentStartPreguntas.putExtra("strArrayMat", materiasSelecc);
-            startActivity(intentStartPreguntas);
-            finish();//Destruye esta activity para evitar un error o bug al llenar el Array y pasar a la siguiente Activity
-
+            if(materiasSelecc.size()>0){ //Impide que el Test inicie si no se han seleccionado asignaturas
+                Intent intentStartPreguntas = new Intent(PreguntasActivity.this,PlantillaTestActivity.class);
+                intentStartPreguntas.putExtra("strArrayMat", materiasSelecc);
+                startActivity(intentStartPreguntas);
+                finish();//Destruye esta activity para evitar un error o bug al llenar el Array y pasar a la siguiente Activity
+            }
+            else{//Le  indica al usuario que es necesario seleccionar por lo menos una asignatura para iniciar el test
+                Toast.makeText(getApplicationContext(),"Seleccione al menos una asignatura",Toast.LENGTH_LONG).show();
+            }
         }
     };
 }

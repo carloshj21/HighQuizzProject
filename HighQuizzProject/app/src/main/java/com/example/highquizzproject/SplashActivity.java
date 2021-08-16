@@ -7,6 +7,9 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -18,6 +21,11 @@ public class SplashActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);   // Se obliga a que la vista siempre esté vertical
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);  // Pantalla completa
         setContentView(R.layout.activity_splash);
+
+        ImageView imageView2=findViewById(R.id.imageView2);
+
+        Animation animacion1= AnimationUtils.loadAnimation(this,R.anim.desplazamiento_arriba);
+        imageView2.setAnimation(animacion1);
 
         new Handler().postDelayed(new Runnable() {
             @Override

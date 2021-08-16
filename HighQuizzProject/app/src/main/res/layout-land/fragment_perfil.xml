@@ -34,17 +34,17 @@
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginHorizontal="18dp"
+        android:layout_height="wrap_content"
         android:text="Cerrar sesión"
-        android:textColor="@color/black"
+        android:textColor="#51AA12"
         android:textSize="20dp"
-        app:backgroundTint="@color/orange_700"
+        app:backgroundTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.842" />
+        app:layout_constraintVertical_bias="0.778" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
